@@ -28,8 +28,7 @@ function App() {
    }, [])
    useEffect(() => {
       async function loadDevs() {
-         const response = await api.get(`/search?longitude=${longitude}&latitude=${latitude}&techs=React,%20PHP&distancia=${distancia}`)
-         console.log(response + response.data)
+         const response = await api.get(`/search?longitude=${longitude.data}&latitude=${latitude.data}&techs=React,%20PHP&distancia=${distancia.data}`)
          setDevs(response.data)
       }
       loadDevs()
@@ -64,7 +63,7 @@ function App() {
          <main>
             <ul>
                <form onSubmit={btndistancia}>
-                  <input />
+                  <input name='' />
                   <button type="submit" />
                </form>
                {devs.map(dev => (
