@@ -50,7 +50,7 @@ function App() {
 
 
    async function handleAddDev(data) {
-      const response = await api.post('/devs', data)
+      const response = await api.post(`/search?longitude=${longitude}&latitude=${latitude}&techs=React,%20PHP&distancia=${distancia}`, data)
 
       setDevs([...devs, response.data])
    }
