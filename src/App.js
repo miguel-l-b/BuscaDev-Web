@@ -34,6 +34,19 @@ function App() {
       }
       loadDevs()
    }, [])
+   async function btndistancia(e) {
+      e.preventDefault();
+ 
+      await onSubmit({
+             github_username,
+             techs,
+             latitude,
+             longitude
+      })
+        
+      setGithubUsername('')
+      setTechs('')
+     }
 
 
    async function handleAddDev(data) {
@@ -50,7 +63,7 @@ function App() {
          </aside>
          <main>
             <ul>
-               <form>
+               <form onSubmit={btndistancia}>
                   <input />
                   <button type="submit" />
                </form>
