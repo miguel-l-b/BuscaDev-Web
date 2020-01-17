@@ -28,7 +28,7 @@ function App() {
    }, [])
    useEffect(() => {
       async function loadDevs() {
-         const response = await api.get(`/devs/search?longitude=${longitude}&latitude=${latitude}&techs=React,%20PHP&distancia=${distancia}`)
+         const response = await api.get(`/search?longitude=${longitude}&latitude=${latitude}&techs=React,%20PHP&distancia=${distancia}`)
          console.log(response + response.data)
          setDevs(response.data)
       }
