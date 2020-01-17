@@ -29,7 +29,7 @@ function App() {
    useEffect(() => {
       async function loadDevs() {
          const response = await api.get(`/devs/search?longitude=${longitude}&latitude=${latitude}&techs=React,%20PHP&distancia=${distancia}`)
-
+         console.log(response + response.data)
          setDevs(response.data)
       }
       loadDevs()
@@ -50,6 +50,10 @@ function App() {
          </aside>
          <main>
             <ul>
+               <form>
+                  <input />
+                  <button type="submit" />
+               </form>
                {devs.map(dev => (
                    <DevItem key={dev._id} dev={dev} />
                ))}
