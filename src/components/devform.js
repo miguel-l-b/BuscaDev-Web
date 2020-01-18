@@ -5,6 +5,7 @@ function DevForm(onSubmit) {
    const [techs, setTechs] = useState('')
    const [ latitude, setlatitude ] = useState('')
    const [ longitude, setlongitude ] = useState('')
+   
 
    useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -26,10 +27,10 @@ function DevForm(onSubmit) {
      e.preventDefault();
 
      await onSubmit({
-            github_username,
-            techs,
-            latitude,
-            longitude
+            setGithubUsername,
+            setTechs,
+            setlatitude,
+            setlongitude
      })
        
      setGithubUsername('')
@@ -51,15 +52,15 @@ function DevForm(onSubmit) {
                <div className="input-group">
                   <div className="input-block">
                      <label htmlFor="latitude">Latitude</label>
-                     <input name="latitude" id="latitude" value={latitude}  required />
+                     <input name="latitude" id="latitude" value={latitude} onChange={ e => setTechs(e.target.value) }  required />
                   </div>
             
                   <div className="input-block">
                      <label htmlFor="longitude">Longitude</label>
-                     <input name="longitude" id="longitude" value={longitude} required />
+                     <input name="longitude" id="longitude" value={longitude} onChange={ e => setTechs(e.target.value) } required />
                   </div>
                </div>
-               <button className="subimit" type="submit">Salvar</button>
+               <button type="submit">Salvar</button>
             </form>
 )}
 

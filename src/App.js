@@ -13,21 +13,7 @@ import DevForm from "./components/devform"
 
 function App() {
    const [devs, setDevs] = useState([])
-   const [github_username, setGithubUsername] = useState('')
-   const [techs, setTechs] = useState('')
-   const [latitude, setlatitude] = useState('')
-   const [longitude, setlongitude] = useState('')
-   const [distancia, setdistancia] = useState('10000')
-   const onSubmit = ''
-
-   useEffect(() => {
-      navigator.geolocation.getCurrentPosition(
-         (position) => {
-            const { latitude, longitude } = position.coords
-            setlatitude(latitude)
-            setlongitude(longitude)
-         })
-   }, [])
+   
    useEffect(() => {
       async function loadDevs() {
          const response = await api.get('/devs')
