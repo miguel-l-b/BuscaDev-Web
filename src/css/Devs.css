@@ -17,6 +17,7 @@
 }
 .devs .pesqdevs{
     width: 100%;
+    align-items: center;
     text-align: center;
     background: #FFF;
     font-size: 18px;
