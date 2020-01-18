@@ -71,6 +71,13 @@ aside strong:hover {
     background: #7d40e7;
 }
 
+@media (max-width: 1000px) {
+  aside strong:hover {
+    color: #333;
+    background: none;
+  }
+}
+
 aside form button[type=submit]:hover {
     background: #6931ca;
 }
