@@ -2,6 +2,8 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 30px;
+    width: 100%;
+    height: 100%;
   
     display: flex;
     flex-direction: row; /* alinhado ao lado */
