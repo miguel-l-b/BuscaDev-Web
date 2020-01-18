@@ -45,7 +45,10 @@ function App() {
   return (
       <div id='app'>
          <aside>
+            <div className='title'>
             <strong>Cadastrar</strong>
+            <a href='/login'>ou Entrar</a>
+            </div>
                <DevForm onSubmit={handleAddDev} />
          </aside>
          <div className='devs'>

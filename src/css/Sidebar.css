@@ -8,17 +8,33 @@ aside {
     border-radius: 2px;
     padding: 30px 20px;
   }
+
+  aside .title{
+    text-align: center;
+  }
   
   aside strong {
     width: 100%;
     font-size: 20px;
-    text-align: center;
     display: block;
     color: #333;
     padding: 10px 2px;
     transition: 0.5s;  
   }
   
+  aside a {
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  aside a:hover {
+    color: #FFF;
+    background: #7d40e7;
+    padding: 3px;
+    border-radius: 3px;
+  }
+
   aside form {
     margin-top: 10%;
   }
