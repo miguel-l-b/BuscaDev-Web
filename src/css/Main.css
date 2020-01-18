@@ -9,10 +9,17 @@ main ul {
      gap: 20px;
      list-style: none;
  }
+
+ @media (max-width: 1000px){
+    main ul{
+        margin-left: 0!important;
+    }
+ }
  
 @media (max-width: 650px) {
     main ul{
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        margin-left: 0!important;
     }
 }
 

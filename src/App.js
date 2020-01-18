@@ -6,6 +6,7 @@ import './css/App.css'
 import './css/global.css'
 import './css/Sidebar.css'
 import './css/Main.css'
+import './css/Devs.css'
 
 import DevItem from "./components/devitem"
 import DevForm from "./components/devform"
@@ -17,6 +18,7 @@ function App() {
    const [latitude, setlatitude] = useState('')
    const [longitude, setlongitude] = useState('')
    const [distancia, setdistancia] = useState('10000')
+   const onSubmit = ''
 
    useEffect(() => {
       navigator.geolocation.getCurrentPosition(
@@ -28,30 +30,16 @@ function App() {
    }, [])
    useEffect(() => {
       async function loadDevs() {
-         const response = await api.get(`/search?longitude=${longitude.data}&latitude=${latitude.data}&techs=React,%20PHP&distancia=${distancia.data}`)
+         const response = await api.get('/devs')
          setDevs(response.data)
       }
       loadDevs()
    }, [])
-   async function btndistancia(e) {
-      e.preventDefault();
- 
-      await onSubmit({
-             github_username,
-             techs,
-             latitude,
-             longitude
-      })
-        
-      setGithubUsername('')
-      setTechs('')
-     }
-
-
+   
    async function handleAddDev(data) {
-      const response = await api.post(`/search?longitude=${longitude}&latitude=${latitude}&techs=React,%20PHP&distancia=${distancia}`, data)
+      const response = await api.post('/devs', data)
 
-      setDevs([...devs, response.data])
+      setDevs([ response ])
    }
 
   return (
@@ -60,17 +48,20 @@ function App() {
             <strong>Cadastrar</strong>
                <DevForm onSubmit={handleAddDev} />
          </aside>
+         <div className='devs'>
+         <div className="pesqdevs">
+               <button>&larr;</button>
+               <label> Página </label>
+               <button>&rarr;</button>
+         </div>
          <main>
             <ul>
-               <form onSubmit={btndistancia}>
-                  <input name='' />
-                  <button type="submit" />
-               </form>
                {devs.map(dev => (
                    <DevItem key={dev._id} dev={dev} />
                ))}
             </ul>
          </main>
+         </div>
       </div>
    )
 }
